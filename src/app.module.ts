@@ -2,6 +2,10 @@ import { Module } from '@nestjs/common';
 import { UsersModule } from './users/users.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './users/entities/user.entity';
+import { ContactInfo } from './users/entities/contact-info.entity';
+import { Meetings } from './users/entities/meetings.entity';
+import { Tasks } from './users/entities/tasks.entity';
+import { Managers } from './users/entities/managers.entity';
 
 
 @Module({
@@ -12,8 +16,8 @@ import { User } from './users/entities/user.entity';
       port: 3306,
       username: 'root',
       password: 'Creole@123',
-      database: 'practice',
-      entities: [User],
+      database: 'sqldb1',
+      entities: [User,ContactInfo,Meetings,Tasks,Managers],
       synchronize: true,
     }),
   UsersModule],
